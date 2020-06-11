@@ -23,9 +23,9 @@ class CreateTransactionService {
 
     if (type === 'outcome') {
       const { total } = this.transactionsRepository.getBalance();
-      const finalValue = total - value;
+      const balanceFinalValue = total - value;
 
-      if (finalValue < 0) {
+      if (balanceFinalValue < 0) {
         throw Error('You do not have this ammount of money, man');
       }
     }
